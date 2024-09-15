@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "I6PKsHUOe4vftH96soSYHkyvRYqgHqbRrUHWbjvd5LigmlY6ymEEPOhkIvLgWOCk79errGjvJFcaWml8eY/Q8g==",
+  "success": true,
+  "projectFilePath": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shahn\\.nuget\\packages\\consoletables\\2.6.1\\consoletables.2.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}

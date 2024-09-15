@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8C606954-21CE-4CFB-90C5-2EB56F9743A6}|Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj|d:\\itr_intrn_public_jalal_uddin\\rock-paper-scissors_game\\rock-paper-scissors_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C606954-21CE-4CFB-90C5-2EB56F9743A6}|Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj|solutionrelative:rock-paper-scissors_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C606954-21CE-4CFB-90C5-2EB56F9743A6}|Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj|d:\\itr_intrn_public_jalal_uddin\\rock-paper-scissors_game\\rock-paper-scissors_game\\rock-paper-scissors_game.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{8C606954-21CE-4CFB-90C5-2EB56F9743A6}|Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj|solutionrelative:rock-paper-scissors_game\\rock-paper-scissors_game.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Rock-Paper-Scissors_game",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj",
+              "RelativeDocumentMoniker": "Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj",
+              "RelativeToolTip": "Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-15T12:50:38.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game\\Program.cs",
+              "RelativeDocumentMoniker": "Rock-Paper-Scissors_game\\Program.cs",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\Rock-Paper-Scissors_game\\Rock-Paper-Scissors_game\\Program.cs",
+              "RelativeToolTip": "Rock-Paper-Scissors_game\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T17:58:06.517Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
