@@ -1,0 +1,38 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Itr_Intrn_Public_Jalal_Uddin\\UserManagementApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2338F44A-046D-4C78-B80A-C863CDAC6956}|UserManagementApp\\UserManagementApp.csproj|d:\\itr_intrn_public_jalal_uddin\\usermanagementapp\\usermanagementapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2338F44A-046D-4C78-B80A-C863CDAC6956}|UserManagementApp\\UserManagementApp.csproj|solutionrelative:usermanagementapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\UserManagementApp\\UserManagementApp\\appsettings.json",
+              "RelativeDocumentMoniker": "UserManagementApp\\appsettings.json",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\UserManagementApp\\UserManagementApp\\appsettings.json",
+              "RelativeToolTip": "UserManagementApp\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-30T11:55:18.993Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
