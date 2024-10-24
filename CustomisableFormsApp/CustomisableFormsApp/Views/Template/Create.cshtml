@@ -1,0 +1,89 @@
+﻿@model Template
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<IdentityUser> userManager;
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-primary ml-0 py-3">
+    <div class="row">
+        <div class="col-12 text-center">
+                <h4 class="text-white py-2">Create Form</h4>
+        </div>
+    </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <div class="border p-3">
+
+                <div class="py-2 col-12">
+                    <input asp-for="TITLE" class="form-control border-0 shadow" value="Untitled form" placeholder="Form title" />
+                </div>
+                <div class="py-2 col-12">
+                    <input asp-for="DESCRIPTION" class="form-control border-0 shadow" placeholder="Description" />
+                </div>
+
+                <div class="py-2 col-12">
+                    <input asp-for="USER_ID" type="hidden" class="form-control border-0 shadow" value="@userManager.GetUserId(User)" />
+                </div>
+
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING1_QUESTION" class="form-control border-0 shadow" placeholder="Que1" />
+                </div>
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING1_ANSWER" class="form-control border-0 shadow" placeholder="Ans1" />
+                </div>
+
+                <div class="py-2 col-12">
+                </div>
+
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING2_QUESTION" class="form-control border-0 shadow" placeholder="Que2" />
+                </div>
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING2_ANSWER" class="form-control border-0 shadow" placeholder="Ans2" />
+                </div>
+
+                <div class="py-2 col-12">
+                </div>
+
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING3_QUESTION" class="form-control border-0 shadow" placeholder="Que3" />
+                </div>
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING3_ANSWER" class="form-control border-0 shadow" placeholder="Ans3" />
+                </div>
+
+                <div class="py-2 col-12">
+                </div>
+
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING4_QUESTION" class="form-control border-0 shadow" placeholder="Que4" />
+                </div>
+                <div class="py-2 col-12">
+                    <input asp-for="CUSTOM_STRING4_ANSWER" class="form-control border-0 shadow" placeholder="Ans4" />
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Create</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Template" asp-action="Index" class="btn btn-outline-primary border  form-control">
+                            Back to List
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}
