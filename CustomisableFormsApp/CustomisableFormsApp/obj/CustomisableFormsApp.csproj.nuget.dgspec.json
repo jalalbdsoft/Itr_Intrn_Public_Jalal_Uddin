@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Itr_Intrn\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj": {}
+    "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj": {}
   },
   "projects": {
-    "D:\\Itr_Intrn\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj": {
+    "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Itr_Intrn\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj",
+        "projectUniqueName": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj",
         "projectName": "CustomisableFormsApp",
-        "projectPath": "D:\\Itr_Intrn\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj",
+        "projectPath": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\CustomisableFormsApp.csproj",
         "packagesPath": "C:\\Users\\shahn\\.nuget\\packages\\",
-        "outputPath": "D:\\Itr_Intrn\\CustomisableFormsApp\\CustomisableFormsApp\\obj\\",
+        "outputPath": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shahn\\AppData\\Roaming\\NuGet\\NuGet.Config",
