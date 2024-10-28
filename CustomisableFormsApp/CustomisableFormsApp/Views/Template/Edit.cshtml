@@ -1,0 +1,2804 @@
+﻿@model Template
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<IdentityUser> userManager;
+
+<h6>Answered By: @ViewData["UserName"]</h6>
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-primary ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="text-white py-2">Answer Following Questions</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <input asp-for="ID" hidden />
+        <form method="post" class="row">
+            <div class="border p-3">
+
+                @if (User.IsInRole("Explorer"))
+                {
+                    <!-- TITLE and DESCRIPTION -->
+                    <div class="py-2 col-12">
+                        <input asp-for="TITLE" class="form-control border-0 shadow" placeholder="Form title" disabled />
+                    </div>
+                    <div class="py-2 col-12">
+                        <input asp-for="DESCRIPTION" class="form-control border-0 shadow" placeholder="Description" disabled />
+                    </div>
+
+                    <div class="py-2 col-12">
+                        <input asp-for="USER_ID_CANDIDATE" type="hidden" class="form-control border-0 shadow" value="@userManager.GetUserId(User)" />
+                    </div>
+                    <br />
+
+
+                    <!-- Questions and Answers -->
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING1_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING1_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_QUESTION" class="form-control border-0 shadow" placeholder="Que1" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING2_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING2_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_QUESTION" class="form-control border-0 shadow" placeholder="Que2" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING3_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING3_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_QUESTION" class="form-control border-0 shadow" placeholder="Que3" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING4_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING4_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_QUESTION" class="form-control border-0 shadow" placeholder="Que4" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING5_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING5_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_QUESTION" class="form-control border-0 shadow" placeholder="Que5" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING6_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING6_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_QUESTION" class="form-control border-0 shadow" placeholder="Que6" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING7_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING7_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_QUESTION" class="form-control border-0 shadow" placeholder="Que7" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING8_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING8_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_QUESTION" class="form-control border-0 shadow" placeholder="Que8" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING9_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING9_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_QUESTION" class="form-control border-0 shadow" placeholder="Que9" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING10_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING10_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_QUESTION" class="form-control border-0 shadow" placeholder="Que10" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING11_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING11_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_QUESTION" class="form-control border-0 shadow" placeholder="Que11" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING12_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING12_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_QUESTION" class="form-control border-0 shadow" placeholder="Que12" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING13_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING13_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_QUESTION" class="form-control border-0 shadow" placeholder="Que13" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING14_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING14_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_QUESTION" class="form-control border-0 shadow" placeholder="Que14" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING15_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING15_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_QUESTION" class="form-control border-0 shadow" placeholder="Que15" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING16_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING16_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_QUESTION" class="form-control border-0 shadow" placeholder="Que16" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING17_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING17_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_QUESTION" class="form-control border-0 shadow" placeholder="Que17" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING18_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING18_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_QUESTION" class="form-control border-0 shadow" placeholder="Que18" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING19_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING19_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_QUESTION" class="form-control border-0 shadow" placeholder="Que19" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING20_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING20_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_QUESTION" class="form-control border-0 shadow" placeholder="Que20" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING21_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING21_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_QUESTION" class="form-control border-0 shadow" placeholder="Que21" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING22_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING22_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_QUESTION" class="form-control border-0 shadow" placeholder="Que22" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING23_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING23_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_QUESTION" class="form-control border-0 shadow" placeholder="Que23" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING24_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING24_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_QUESTION" class="form-control border-0 shadow" placeholder="Que24" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING25_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING25_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_QUESTION" class="form-control border-0 shadow" placeholder="Que25" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING26_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING26_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_QUESTION" class="form-control border-0 shadow" placeholder="Que26" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING27_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING27_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_QUESTION" class="form-control border-0 shadow" placeholder="Que27" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING28_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING28_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_QUESTION" class="form-control border-0 shadow" placeholder="Que28" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING29_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING29_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_QUESTION" class="form-control border-0 shadow" placeholder="Que29" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING30_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING30_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_QUESTION" class="form-control border-0 shadow" placeholder="Que30" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING31_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING31_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_QUESTION" class="form-control border-0 shadow" placeholder="Que31" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING32_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING32_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_QUESTION" class="form-control border-0 shadow" placeholder="Que32" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING33_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING33_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_QUESTION" class="form-control border-0 shadow" placeholder="Que33" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING34_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING34_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_QUESTION" class="form-control border-0 shadow" placeholder="Que34" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING35_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING35_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_QUESTION" class="form-control border-0 shadow" placeholder="Que35" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING36_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING36_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_QUESTION" class="form-control border-0 shadow" placeholder="Que36" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING37_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING37_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_QUESTION" class="form-control border-0 shadow" placeholder="Que37" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING38_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING38_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_QUESTION" class="form-control border-0 shadow" placeholder="Que38" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING39_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING39_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_QUESTION" class="form-control border-0 shadow" placeholder="Que39" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING40_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING40_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_QUESTION" class="form-control border-0 shadow" placeholder="Que40" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING41_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING41_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_QUESTION" class="form-control border-0 shadow" placeholder="Que41" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING42_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING42_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_QUESTION" class="form-control border-0 shadow" placeholder="Que42" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING43_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING43_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_QUESTION" class="form-control border-0 shadow" placeholder="Que43" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING44_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING44_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_QUESTION" class="form-control border-0 shadow" placeholder="Que44" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING45_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING45_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_QUESTION" class="form-control border-0 shadow" placeholder="Que45" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING46_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING46_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_QUESTION" class="form-control border-0 shadow" placeholder="Que46" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING47_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING47_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_QUESTION" class="form-control border-0 shadow" placeholder="Que47" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING48_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING48_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_QUESTION" class="form-control border-0 shadow" placeholder="Que48" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING49_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING49_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_QUESTION" class="form-control border-0 shadow" placeholder="Que49" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING50_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING50_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_QUESTION" class="form-control border-0 shadow" placeholder="Que50" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+                }
+
+                else if (User.IsInRole("Creator"))
+                {
+                    <!-- TITLE and DESCRIPTION -->
+                    <div class="py-2 col-12">
+                        <input asp-for="TITLE" class="form-control border-0 shadow" placeholder="Form title" />
+                    </div>
+                    <div class="py-2 col-12">
+                        <input asp-for="DESCRIPTION" class="form-control border-0 shadow" placeholder="Description" />
+                    </div>
+
+                    <div class="py-2 col-12">
+                        <input asp-for="USER_ID_CANDIDATE" type="hidden" class="form-control border-0 shadow" value="@userManager.GetUserId(User)" />
+                    </div>
+                    <br />
+
+
+                    <!-- Questions and Answers -->
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING1_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING1_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_QUESTION" class="form-control border-0 shadow" placeholder="Que1" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING2_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING2_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_QUESTION" class="form-control border-0 shadow" placeholder="Que2" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING3_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING3_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_QUESTION" class="form-control border-0 shadow" placeholder="Que3" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING4_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING4_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_QUESTION" class="form-control border-0 shadow" placeholder="Que4" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING5_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING5_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_QUESTION" class="form-control border-0 shadow" placeholder="Que5" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING6_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING6_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_QUESTION" class="form-control border-0 shadow" placeholder="Que6" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING7_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING7_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_QUESTION" class="form-control border-0 shadow" placeholder="Que7" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING8_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING8_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_QUESTION" class="form-control border-0 shadow" placeholder="Que8" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING9_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING9_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_QUESTION" class="form-control border-0 shadow" placeholder="Que9" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING10_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING10_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_QUESTION" class="form-control border-0 shadow" placeholder="Que10" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING11_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING11_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_QUESTION" class="form-control border-0 shadow" placeholder="Que11" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING12_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING12_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_QUESTION" class="form-control border-0 shadow" placeholder="Que12" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING13_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING13_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_QUESTION" class="form-control border-0 shadow" placeholder="Que13" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING14_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING14_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_QUESTION" class="form-control border-0 shadow" placeholder="Que14" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING15_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING15_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_QUESTION" class="form-control border-0 shadow" placeholder="Que15" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING16_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING16_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_QUESTION" class="form-control border-0 shadow" placeholder="Que16" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING17_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING17_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_QUESTION" class="form-control border-0 shadow" placeholder="Que17" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING18_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING18_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_QUESTION" class="form-control border-0 shadow" placeholder="Que18" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING19_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING19_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_QUESTION" class="form-control border-0 shadow" placeholder="Que19" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING20_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING20_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_QUESTION" class="form-control border-0 shadow" placeholder="Que20" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING21_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING21_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_QUESTION" class="form-control border-0 shadow" placeholder="Que21" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING22_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING22_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_QUESTION" class="form-control border-0 shadow" placeholder="Que22" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING23_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING23_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_QUESTION" class="form-control border-0 shadow" placeholder="Que23" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING24_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING24_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_QUESTION" class="form-control border-0 shadow" placeholder="Que24" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING25_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING25_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_QUESTION" class="form-control border-0 shadow" placeholder="Que25" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING26_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING26_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_QUESTION" class="form-control border-0 shadow" placeholder="Que26" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING27_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING27_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_QUESTION" class="form-control border-0 shadow" placeholder="Que27" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING28_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING28_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_QUESTION" class="form-control border-0 shadow" placeholder="Que28" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING29_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING29_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_QUESTION" class="form-control border-0 shadow" placeholder="Que29" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING30_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING30_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_QUESTION" class="form-control border-0 shadow" placeholder="Que30" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING31_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING31_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_QUESTION" class="form-control border-0 shadow" placeholder="Que31" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING32_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING32_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_QUESTION" class="form-control border-0 shadow" placeholder="Que32" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING33_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING33_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_QUESTION" class="form-control border-0 shadow" placeholder="Que33" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING34_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING34_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_QUESTION" class="form-control border-0 shadow" placeholder="Que34" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING35_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING35_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_QUESTION" class="form-control border-0 shadow" placeholder="Que35" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING36_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING36_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_QUESTION" class="form-control border-0 shadow" placeholder="Que36" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING37_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING37_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_QUESTION" class="form-control border-0 shadow" placeholder="Que37" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING38_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING38_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_QUESTION" class="form-control border-0 shadow" placeholder="Que38" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING39_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING39_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_QUESTION" class="form-control border-0 shadow" placeholder="Que39" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING40_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING40_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_QUESTION" class="form-control border-0 shadow" placeholder="Que40" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING41_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING41_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_QUESTION" class="form-control border-0 shadow" placeholder="Que41" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING42_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING42_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_QUESTION" class="form-control border-0 shadow" placeholder="Que42" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING43_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING43_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_QUESTION" class="form-control border-0 shadow" placeholder="Que43" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING44_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING44_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_QUESTION" class="form-control border-0 shadow" placeholder="Que44" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING45_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING45_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_QUESTION" class="form-control border-0 shadow" placeholder="Que45" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING46_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING46_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_QUESTION" class="form-control border-0 shadow" placeholder="Que46" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING47_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING47_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_QUESTION" class="form-control border-0 shadow" placeholder="Que47" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING48_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING48_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_QUESTION" class="form-control border-0 shadow" placeholder="Que48" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING49_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING49_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_QUESTION" class="form-control border-0 shadow" placeholder="Que49" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING50_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING50_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_QUESTION" class="form-control border-0 shadow" placeholder="Que50" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_ANSWER" class="form-control border-0 shadow" placeholder="Ans" disabled />
+                        </div>
+                    }
+                }
+
+                else if (User.IsInRole("Candidate"))
+                {
+                    <!-- TITLE and DESCRIPTION -->
+                    <div class="py-2 col-12">
+                        <input asp-for="TITLE" class="form-control border-0 shadow" placeholder="Form title" disabled />
+                    </div>
+                    <div class="py-2 col-12">
+                        <input asp-for="DESCRIPTION" class="form-control border-0 shadow" placeholder="Description" disabled />
+                    </div>
+
+                    <div class="py-2 col-12">
+                        <input asp-for="USER_ID_CANDIDATE" type="hidden" class="form-control border-0 shadow" value="@userManager.GetUserId(User)" />
+                    </div>
+                    <br />
+
+
+                    <!-- Questions and Answers -->
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING1_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING1_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_QUESTION" class="form-control border-0 shadow" placeholder="Que1" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING2_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING2_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_QUESTION" class="form-control border-0 shadow" placeholder="Que2" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING3_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING3_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_QUESTION" class="form-control border-0 shadow" placeholder="Que3" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING4_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING4_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_QUESTION" class="form-control border-0 shadow" placeholder="Que4" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING5_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING5_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_QUESTION" class="form-control border-0 shadow" placeholder="Que5" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING6_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING6_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_QUESTION" class="form-control border-0 shadow" placeholder="Que6" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING7_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING7_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_QUESTION" class="form-control border-0 shadow" placeholder="Que7" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING8_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING8_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_QUESTION" class="form-control border-0 shadow" placeholder="Que8" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING9_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING9_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_QUESTION" class="form-control border-0 shadow" placeholder="Que9" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING10_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING10_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_QUESTION" class="form-control border-0 shadow" placeholder="Que10" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING11_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING11_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_QUESTION" class="form-control border-0 shadow" placeholder="Que11" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING12_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING12_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_QUESTION" class="form-control border-0 shadow" placeholder="Que12" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING13_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING13_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_QUESTION" class="form-control border-0 shadow" placeholder="Que13" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING14_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING14_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_QUESTION" class="form-control border-0 shadow" placeholder="Que14" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING15_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING15_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_QUESTION" class="form-control border-0 shadow" placeholder="Que15" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING16_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING16_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_QUESTION" class="form-control border-0 shadow" placeholder="Que16" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING17_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING17_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_QUESTION" class="form-control border-0 shadow" placeholder="Que17" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING18_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING18_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_QUESTION" class="form-control border-0 shadow" placeholder="Que18" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING19_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING19_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_QUESTION" class="form-control border-0 shadow" placeholder="Que19" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING20_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING20_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_QUESTION" class="form-control border-0 shadow" placeholder="Que20" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING21_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING21_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_QUESTION" class="form-control border-0 shadow" placeholder="Que21" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING22_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING22_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_QUESTION" class="form-control border-0 shadow" placeholder="Que22" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING23_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING23_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_QUESTION" class="form-control border-0 shadow" placeholder="Que23" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING24_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING24_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_QUESTION" class="form-control border-0 shadow" placeholder="Que24" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING25_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING25_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_QUESTION" class="form-control border-0 shadow" placeholder="Que25" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING26_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING26_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_QUESTION" class="form-control border-0 shadow" placeholder="Que26" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING27_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING27_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_QUESTION" class="form-control border-0 shadow" placeholder="Que27" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING28_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING28_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_QUESTION" class="form-control border-0 shadow" placeholder="Que28" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING29_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING29_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_QUESTION" class="form-control border-0 shadow" placeholder="Que29" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING30_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING30_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_QUESTION" class="form-control border-0 shadow" placeholder="Que30" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING31_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING31_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_QUESTION" class="form-control border-0 shadow" placeholder="Que31" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING32_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING32_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_QUESTION" class="form-control border-0 shadow" placeholder="Que32" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING33_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING33_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_QUESTION" class="form-control border-0 shadow" placeholder="Que33" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING34_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING34_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_QUESTION" class="form-control border-0 shadow" placeholder="Que34" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING35_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING35_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_QUESTION" class="form-control border-0 shadow" placeholder="Que35" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING36_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING36_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_QUESTION" class="form-control border-0 shadow" placeholder="Que36" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING37_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING37_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_QUESTION" class="form-control border-0 shadow" placeholder="Que37" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING38_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING38_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_QUESTION" class="form-control border-0 shadow" placeholder="Que38" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING39_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING39_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_QUESTION" class="form-control border-0 shadow" placeholder="Que39" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING40_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING40_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_QUESTION" class="form-control border-0 shadow" placeholder="Que40" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING41_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING41_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_QUESTION" class="form-control border-0 shadow" placeholder="Que41" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING42_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING42_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_QUESTION" class="form-control border-0 shadow" placeholder="Que42" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING43_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING43_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_QUESTION" class="form-control border-0 shadow" placeholder="Que43" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING44_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING44_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_QUESTION" class="form-control border-0 shadow" placeholder="Que44" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING45_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING45_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_QUESTION" class="form-control border-0 shadow" placeholder="Que45" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING46_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING46_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_QUESTION" class="form-control border-0 shadow" placeholder="Que46" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING47_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING47_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_QUESTION" class="form-control border-0 shadow" placeholder="Que47" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING48_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING48_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_QUESTION" class="form-control border-0 shadow" placeholder="Que48" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING49_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING49_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_QUESTION" class="form-control border-0 shadow" placeholder="Que49" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING50_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING50_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_QUESTION" class="form-control border-0 shadow" placeholder="Que50" disabled />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+                }
+
+                else if (User.IsInRole("Admin"))
+                {
+                    <!-- TITLE and DESCRIPTION -->
+                    <div class="py-2 col-12">
+                        <input asp-for="TITLE" class="form-control border-0 shadow" placeholder="Form title" />
+                    </div>
+                    <div class="py-2 col-12">
+                        <input asp-for="DESCRIPTION" class="form-control border-0 shadow" placeholder="Description" />
+                    </div>
+
+                    <div class="py-2 col-12">
+                        <input asp-for="USER_ID_CANDIDATE" type="hidden" class="form-control border-0 shadow" value="@userManager.GetUserId(User)" />
+                    </div>
+                    <br />
+
+
+                    @* <!-- Dynamically Rendered Questions and Answers -->
+                @{
+                // Loop through question-answer pairs
+                for (int i = 1; i <= 50; i++)
+                {
+                // Build property names dynamically
+                var questionProp = $"CUSTOM_STRING{i}_QUESTION";
+                var answerProp = $"CUSTOM_STRING{i}_ANSWER";
+
+                // Check if the question or answer property has a value
+                var questionValue = Model.GetType().GetProperty(questionProp)?.GetValue(Model) as string;
+                var answerValue = Model.GetType().GetProperty(answerProp)?.GetValue(Model) as string;
+
+                if (!string.IsNullOrEmpty(questionValue) || !string.IsNullOrEmpty(answerValue))
+                {
+                <div class="py-2 col-12">
+                <input asp-for="@questionProp" class="form-control border-0 shadow" placeholder="Question @i" value="@questionValue" />
+                </div>
+                <div class="py-2 col-12">
+                <input asp-for="@answerProp" class="form-control border-0 shadow" placeholder="Answer @i" value="@answerValue" />
+                </div>
+                <br />
+                <br />
+                }
+                }
+                } *@
+
+
+                    @* @{
+                for (int i = 1; i <= 50; i++)
+                {
+                <div class="py-2 col-12">
+                <input name="CUSTOM_STRING@i_QUESTION" class="form-control border-0 shadow" placeholder="Question @i" value="@Model.GetType().GetProperty($"CUSTOM_STRING{i}_QUESTION")?.GetValue(Model)" />
+                </div>
+                <div class="py-2 col-12">
+                <input name="CUSTOM_STRING@i_ANSWER" class="form-control border-0 shadow" placeholder="Answer @i" value="@Model.GetType().GetProperty($"CUSTOM_STRING{i}_ANSWER")?.GetValue(Model)" />
+                </div>
+                }
+                } *@
+
+
+                    <!-- Questions and Answers -->
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING1_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING1_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_QUESTION" class="form-control border-0 shadow" placeholder="Que1" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING1_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING2_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING2_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_QUESTION" class="form-control border-0 shadow" placeholder="Que2" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING2_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING3_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING3_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_QUESTION" class="form-control border-0 shadow" placeholder="Que3" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING3_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING4_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING4_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_QUESTION" class="form-control border-0 shadow" placeholder="Que4" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING4_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING5_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING5_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_QUESTION" class="form-control border-0 shadow" placeholder="Que5" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING5_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING6_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING6_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_QUESTION" class="form-control border-0 shadow" placeholder="Que6" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING6_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING7_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING7_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_QUESTION" class="form-control border-0 shadow" placeholder="Que7" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING7_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING8_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING8_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_QUESTION" class="form-control border-0 shadow" placeholder="Que8" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING8_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING9_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING9_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_QUESTION" class="form-control border-0 shadow" placeholder="Que9" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING9_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING10_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING10_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_QUESTION" class="form-control border-0 shadow" placeholder="Que10" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING10_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING11_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING11_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_QUESTION" class="form-control border-0 shadow" placeholder="Que11" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING11_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING12_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING12_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_QUESTION" class="form-control border-0 shadow" placeholder="Que12" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING12_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING13_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING13_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_QUESTION" class="form-control border-0 shadow" placeholder="Que13" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING13_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING14_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING14_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_QUESTION" class="form-control border-0 shadow" placeholder="Que14" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING14_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING15_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING15_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_QUESTION" class="form-control border-0 shadow" placeholder="Que15" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING15_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING16_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING16_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_QUESTION" class="form-control border-0 shadow" placeholder="Que16" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING16_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING17_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING17_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_QUESTION" class="form-control border-0 shadow" placeholder="Que17" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING17_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING18_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING18_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_QUESTION" class="form-control border-0 shadow" placeholder="Que18" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING18_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING19_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING19_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_QUESTION" class="form-control border-0 shadow" placeholder="Que19" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING19_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING20_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING20_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_QUESTION" class="form-control border-0 shadow" placeholder="Que20" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING20_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING21_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING21_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_QUESTION" class="form-control border-0 shadow" placeholder="Que21" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING21_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING22_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING22_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_QUESTION" class="form-control border-0 shadow" placeholder="Que22" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING22_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING23_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING23_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_QUESTION" class="form-control border-0 shadow" placeholder="Que23" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING23_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING24_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING24_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_QUESTION" class="form-control border-0 shadow" placeholder="Que24" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING24_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING25_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING25_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_QUESTION" class="form-control border-0 shadow" placeholder="Que25" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING25_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING26_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING26_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_QUESTION" class="form-control border-0 shadow" placeholder="Que26" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING26_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING27_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING27_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_QUESTION" class="form-control border-0 shadow" placeholder="Que27" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING27_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING28_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING28_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_QUESTION" class="form-control border-0 shadow" placeholder="Que28" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING28_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING29_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING29_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_QUESTION" class="form-control border-0 shadow" placeholder="Que29" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING29_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING30_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING30_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_QUESTION" class="form-control border-0 shadow" placeholder="Que30" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING30_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING31_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING31_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_QUESTION" class="form-control border-0 shadow" placeholder="Que31" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING31_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING32_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING32_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_QUESTION" class="form-control border-0 shadow" placeholder="Que32" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING32_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING33_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING33_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_QUESTION" class="form-control border-0 shadow" placeholder="Que33" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING33_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING34_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING34_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_QUESTION" class="form-control border-0 shadow" placeholder="Que34" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING34_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING35_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING35_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_QUESTION" class="form-control border-0 shadow" placeholder="Que35" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING35_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING36_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING36_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_QUESTION" class="form-control border-0 shadow" placeholder="Que36" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING36_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING37_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING37_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_QUESTION" class="form-control border-0 shadow" placeholder="Que37" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING37_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING38_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING38_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_QUESTION" class="form-control border-0 shadow" placeholder="Que38" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING38_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING39_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING39_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_QUESTION" class="form-control border-0 shadow" placeholder="Que39" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING39_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING40_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING40_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_QUESTION" class="form-control border-0 shadow" placeholder="Que40" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING40_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING41_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING41_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_QUESTION" class="form-control border-0 shadow" placeholder="Que41" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING41_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING42_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING42_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_QUESTION" class="form-control border-0 shadow" placeholder="Que42" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING42_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING43_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING43_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_QUESTION" class="form-control border-0 shadow" placeholder="Que43" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING43_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING44_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING44_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_QUESTION" class="form-control border-0 shadow" placeholder="Que44" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING44_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING45_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING45_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_QUESTION" class="form-control border-0 shadow" placeholder="Que45" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING45_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING46_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING46_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_QUESTION" class="form-control border-0 shadow" placeholder="Que46" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING46_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING47_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING47_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_QUESTION" class="form-control border-0 shadow" placeholder="Que47" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING47_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING48_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING48_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_QUESTION" class="form-control border-0 shadow" placeholder="Que48" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING48_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING49_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING49_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_QUESTION" class="form-control border-0 shadow" placeholder="Que49" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING49_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+
+                    <br />
+                    <br />
+
+                    @if (!string.IsNullOrEmpty(Model.CUSTOM_STRING50_QUESTION) || !string.IsNullOrEmpty(Model.CUSTOM_STRING50_ANSWER))
+                    {
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_QUESTION" class="form-control border-0 shadow" placeholder="Que50" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input asp-for="CUSTOM_STRING50_ANSWER" class="form-control border-0 shadow" placeholder="Ans" />
+                        </div>
+                    }
+                }
+
+
+                @* <!-- Button to add a new question -->
+                <div class="row py-2">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-outline-secondary form-control" id="addQuestionBtn">Create Another Question</button>
+                    </div>
+                </div> *@
+
+                <!-- Additional Questions Container -->
+                @*  <div id="additionalQuestionsContainer"></div> *@
+
+
+                <!-- Submit and Action Buttons -->
+                <div class="row pt-2">
+                    @if (User.IsInRole("Candidate"))
+                    {
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Recheck Everything, cannot be submitted more than once');">Submit</button>
+                        </div>
+                    }
+                    else if (User.IsInRole("Admin") || User.IsInRole("Creator"))
+                    {
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Are You Sure?');">Update</button>
+                        </div>
+                    }
+
+                    @if (User.IsInRole("Admin") || User.IsInRole("Creator"))
+                    {
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-outline-danger border form-control" asp-controller="Template" asp-action="Delete" asp-route-id="@Model.ID" onclick="return confirm('Are You Sure?');">Delete</button>
+                        </div>
+                    }                   
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        @if (User.IsInRole("Admin") || User.IsInRole("Creator") || User.IsInRole("Explorer"))
+                        {
+                            <a asp-controller="Template" asp-action="Index" class="btn btn-outline-primary border form-control">
+                                Back to List
+                            </a>
+                        }             
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+@* @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Add Question dynamically
+        document.getElementById("addQuestionBtn").addEventListener("click", function () {
+            let container = document.getElementById("additionalQuestionsContainer");
+            let questionIndex = container.children.length + 5; // Adjust index after predefined questions
+            container.insertAdjacentHTML("beforeend", `
+            <br />
+            <br />
+                        <div class="py-2 col-12">
+                            <input name="CUSTOM_STRING${questionIndex}_QUESTION" class="form-control border-0 shadow" placeholder="Que${questionIndex}" />
+                        </div>
+                        <div class="py-2 col-12">
+                            <input name="CUSTOM_STRING${questionIndex}_ANSWER" class="form-control border-0 shadow" placeholder="Ans${questionIndex}" />
+                        </div>
+                    `);
+        });
+
+        // Confirm delete with alert
+        function confirmDelete(id) {
+            if (confirm("Are you sure you want to delete this item?")) {
+                window.location.href = '@Url.Action("Delete", "Template")/' + id;
+            }
+        }
+    </script>
+} *@
