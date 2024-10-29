@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CustomisableFormsApp.Models.Template>
+
+@{
+    ViewData["Title"] = "";
+}
+
+<h6>Start a new form</h6>
+<div class="d-flex justify-content-center align-items-center" style="width:150px; height: 200px; background-color: lightgray; font-size:100px;">
+    <a style="text-decoration:none; color: black;" asp-action="Create">➕</a>
+</div>
+
+<span style="font-weight:bold">Blank Form</span>
+
+<br />
+
+<hr />
+
+<h6>Recent forms</h6>
+
+<br />
+
+<div class="row">
+@foreach(var items in Model)
+{
+       
+    <div class="col-2">
+        <div class="d-flex justify-content-center align-items-center" style="width:150px; height: 200px; background-color: lightblue; font-size:100px;">
+                <a style="text-decoration:none; color: black;" asp-controller="Template" asp-action="Edit" asp-route-id="@items.ID">📝</a>
+        </div>
+        <span style="font-weight:bold">@items.TITLE</span>
+    </div>
+       
+}   
+</div>
+
+
