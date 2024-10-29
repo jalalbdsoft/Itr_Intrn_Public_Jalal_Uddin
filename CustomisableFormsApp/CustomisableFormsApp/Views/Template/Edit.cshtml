@@ -2,7 +2,15 @@
 @using Microsoft.AspNetCore.Identity;
 @inject UserManager<IdentityUser> userManager;
 
-<h6>Answered By: @ViewData["UserName"]</h6>
+@if (User.IsInRole("Admin") || User.IsInRole("Creator") || User.IsInRole("Candidate"))
+{
+    <h6>Answered By : @ViewData["UserName"]</h6>
+}
+else
+{
+    <h6>Answered By : </h6>
+}
+
 <div class="card shadow border-0 mt-4">
     <div class="card-header bg-primary ml-0 py-3">
         <div class="row">
@@ -2720,9 +2728,9 @@
 
                 @* <!-- Button to add a new question -->
                 <div class="row py-2">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-outline-secondary form-control" id="addQuestionBtn">Create Another Question</button>
-                    </div>
+                <div class="col-12">
+                <button type="button" class="btn btn-outline-secondary form-control" id="addQuestionBtn">Create Another Question</button>
+                </div>
                 </div> *@
 
                 <!-- Additional Questions Container -->
@@ -2743,13 +2751,25 @@
                             <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Are You Sure?');">Update</button>
                         </div>
                     }
+                    else if (User.IsInRole("Explorer"))
+                    {
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Are You Sure?');" disabled>Update</button>
+                        </div>
+                    }
 
                     @if (User.IsInRole("Admin") || User.IsInRole("Creator"))
                     {
                         <div class="col-6 col-md-3">
                             <button type="submit" class="btn btn-outline-danger border form-control" asp-controller="Template" asp-action="Delete" asp-route-id="@Model.ID" onclick="return confirm('Are You Sure?');">Delete</button>
                         </div>
-                    }                   
+                    }
+                    else if (User.IsInRole("Explorer"))
+                    {
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-outline-danger border form-control" asp-controller="Template" asp-action="Delete" asp-route-id="@Model.ID" onclick="return confirm('Are You Sure?');" disabled>Delete</button>
+                        </div>
+                    }
                 </div>
 
                 <div class="row pt-2">
@@ -2759,7 +2779,7 @@
                             <a asp-controller="Template" asp-action="Index" class="btn btn-outline-primary border form-control">
                                 Back to List
                             </a>
-                        }             
+                        }
                     </div>
                 </div>
 
