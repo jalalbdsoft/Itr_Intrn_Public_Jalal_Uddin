@@ -25,7 +25,12 @@ namespace CustomisableFormsApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            if (User.IsInRole("Candidate") || User.IsInRole("Creator"))
+            if (User.IsInRole("Admin"))
+            {
+                var applicationDbContext = _db.Templates.Include(d => d.User);
+                return View(await applicationDbContext.ToListAsync());
+            }
+            else if (User.IsInRole("Candidate") || User.IsInRole("Creator"))
             {
                 var applicationDbContext = from c in _db.Templates
                                            select c;

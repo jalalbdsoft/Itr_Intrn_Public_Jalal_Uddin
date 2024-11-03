@@ -1,7 +1,7 @@
 ﻿@model List<CustomisableFormsApp.Models.ApplicationUser>
 
-    <h1>Users List</h1>
-     
+<h1>Users List</h1>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -44,6 +44,18 @@
                         @* Anti-forgery token to prevent CSRF attacks *@
                         <input type="hidden" asp-for="@users.Id" name="id" />
                         <button type="submit" class="btn btn-danger">Active</button>
+                    </form>
+
+                    <form asp-controller="Home" asp-action="AddtoAdmin" method="post" style="display:inline;" onsubmit="return confirm('Are you sure to make this user Admin?');">
+                        @* Anti-forgery token to prevent CSRF attacks *@
+                        <input type="hidden" asp-for="@users.Id" name="id" />
+                        <button type="submit" class="btn btn-danger">AddtoAdmin</button>
+                    </form>
+
+                    <form asp-controller="Home" asp-action="RemovefromAdmin" method="post" style="display:inline;" onsubmit="return confirm('Are you sure to remove this user from Admin??');">
+                        @* Anti-forgery token to prevent CSRF attacks *@
+                        <input type="hidden" asp-for="@users.Id" name="id" />
+                        <button type="submit" class="btn btn-danger">RemovefromAdmin</button>
                     </form>
 
                 </td>

@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|d:\\itr_intrn_public_jalal_uddin\\customisableformsapp\\customisableformsapp\\controllers\\templatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|solutionrelative:customisableformsapp\\controllers\\templatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|d:\\itr_intrn_public_jalal_uddin\\customisableformsapp\\customisableformsapp\\views\\template\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|solutionrelative:customisableformsapp\\views\\template\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|d:\\itr_intrn_public_jalal_uddin\\customisableformsapp\\customisableformsapp\\views\\home\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|solutionrelative:customisableformsapp\\views\\home\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|d:\\itr_intrn_public_jalal_uddin\\customisableformsapp\\customisableformsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{950B9688-699D-455A-9708-F8312E98F419}|CustomisableFormsApp\\CustomisableFormsApp.csproj|solutionrelative:customisableformsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CustomisableFormsApp\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CustomisableFormsApp\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T12:01:55.498Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Views\\Home\\UserList.cshtml",
+              "RelativeDocumentMoniker": "CustomisableFormsApp\\Views\\Home\\UserList.cshtml",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Views\\Home\\UserList.cshtml",
+              "RelativeToolTip": "CustomisableFormsApp\\Views\\Home\\UserList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-03T12:03:44.742Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Views\\Template\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CustomisableFormsApp\\Views\\Template\\Edit.cshtml",
+              "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Views\\Template\\Edit.cshtml",
+              "RelativeToolTip": "CustomisableFormsApp\\Views\\Template\\Edit.cshtml",
+              "ViewState": "AQIAAJMKAAAAAAAAAAAmwKUKAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-03T12:04:53.947Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +78,9 @@
               "RelativeDocumentMoniker": "CustomisableFormsApp\\Controllers\\TemplateController.cs",
               "ToolTip": "D:\\Itr_Intrn_Public_Jalal_Uddin\\CustomisableFormsApp\\CustomisableFormsApp\\Controllers\\TemplateController.cs",
               "RelativeToolTip": "CustomisableFormsApp\\Controllers\\TemplateController.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAiwIAAAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T06:37:26.104Z",
+              "WhenOpened": "2024-11-03T12:06:40.468Z",
               "EditorCaption": ""
             }
           ]

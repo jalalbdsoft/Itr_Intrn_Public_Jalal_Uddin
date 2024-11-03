@@ -12,10 +12,12 @@ namespace CustomisableFormsApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        private readonly UserManager<IdentityUser> _userManager;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _logger = logger;
             _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -55,7 +57,7 @@ namespace CustomisableFormsApp.Controllers
                             join role in _context.Roles on userRole.RoleId equals role.Id
                             where userRole.UserId == user.Id
                             select role.Name).ToList()
-               }).ToListAsync(); 
+               }).ToListAsync();
             return View(usersWithRoles);
         }
 
@@ -145,6 +147,56 @@ namespace CustomisableFormsApp.Controllers
             // Reload the user list and return to the UserList view with error messages if any.
             var users = await _context.Users.OfType<ApplicationUser>().ToListAsync();
             return View("UserList", users);
-        }      
+        }
+
+        // Add User to Admin Role
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AddtoAdmin(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "User not found");
+                return RedirectToAction("UserList");
+            }
+
+            var result = await _userManager.AddToRoleAsync(user, "Admin");
+            if (result.Succeeded)
+            {
+                TempData["success"] = "User promoted to Admin successfully";
+            }
+            else
+            {
+                TempData["error"] = "Failed to promote user to Admin";
+            }
+
+            return RedirectToAction("UserList");
+        }
+
+        // Remove User from Admin Role
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RemovefromAdmin(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "User not found");
+                return RedirectToAction("UserList");
+            }
+
+            var result = await _userManager.RemoveFromRoleAsync(user, "Admin");
+            if (result.Succeeded)
+            {
+                TempData["success"] = "User removed from Admin successfully";
+            }
+            else
+            {
+                TempData["error"] = "Failed to remove user from Admin";
+            }
+
+            return RedirectToAction("UserList");
+        }
     }
 }
