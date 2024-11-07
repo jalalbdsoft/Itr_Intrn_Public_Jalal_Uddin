@@ -1,5 +1,6 @@
 using CustomisableFormsApp.Data;
 using CustomisableFormsApp.Models;
+using CustomisableFormsApp.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +14,13 @@ namespace CustomisableFormsApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        private readonly SalesforceService _salesforceService;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager, SalesforceService salesforceService)
         {
             _logger = logger;
             _context = context;
             _userManager = userManager;
+            _salesforceService = salesforceService;
         }
 
         public IActionResult Index()
@@ -196,6 +199,48 @@ namespace CustomisableFormsApp.Controllers
                 TempData["error"] = "Failed to remove user from Admin";
             }
 
+            return RedirectToAction("UserList");
+        }
+
+        // Salesforce Portion
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public IActionResult CreateSalesforceAccount(string userId)
+        {
+            var user = _context.Users.OfType<ApplicationUser>().FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+            {
+                TempData["error"] = "User not found";
+                return RedirectToAction("UserList");
+            }
+
+            return View(user);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> CreateSalesforceAccountPost(string USERID, string PhoneNumber)
+        {
+            var user = await _context.Users.OfType<ApplicationUser>().FirstOrDefaultAsync(u => u.Id == USERID);
+            if (user == null)
+            {
+                TempData["error"] = "User not found";
+                return RedirectToAction("UserList");
+            }
+
+            var accessToken = await _salesforceService.Authenticate();
+            bool isSuccess = await _salesforceService.CreateAccount(user.Name, PhoneNumber ?? user.PhoneNumber, accessToken);
+
+            //TempData[isSuccess ? "success" : "error"] = isSuccess ? "Account created in Salesforce successfully." : "Failed to create account in Salesforce.";
+
+            if (isSuccess)
+            {
+                TempData["success"] = "Account created in Salesforce successfully.";
+            }
+            else
+            {
+                TempData["error"] = "Failed to create account in Salesforce.";
+            }
             return RedirectToAction("UserList");
         }
     }

@@ -1,0 +1,22 @@
+﻿@model CustomisableFormsApp.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Create Salesforce Account";
+}
+
+<h2>Create Salesforce Account for @Model.Name</h2>
+
+<form asp-action="CreateSalesforceAccountPost" method="post">
+    <input type="hidden" name="userId" value="@Model.Id" />
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" readonly />
+    </div>
+    <div class="form-group">
+        <label>Contact Number</label>
+        @* <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" readonly /> *@
+        <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" @(Model.PhoneNumber == null ? "" : "readonly") />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure?');">Create Salesforce Account</button>
+</form>
